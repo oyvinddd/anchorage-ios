@@ -18,7 +18,8 @@ final class ServiceFactory: ServiceFactoryProtocol {
     
     static let instance = ServiceFactory()
     
-    var eventService: EventService { return AnchorageEventService() }
+    var accountService: AccountService { return LiveAccountService.shared }
+    var eventService: EventService { return LiveEventService() }
 }
 
 // MARK: - Mocked service factory
@@ -27,5 +28,6 @@ final class MockedServiceFactory: ServiceFactoryProtocol {
     
     static let instance = ServiceFactory()
     
+    var accountService: AccountService { return MockedAccountService.shared }
     var eventService: EventService { return MockedEventService() }
 }

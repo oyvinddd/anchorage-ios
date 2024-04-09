@@ -28,4 +28,8 @@ final class NetworkManager {
     func execute<T: Decodable>(request: URLRequest) async throws -> T {
         fatalError("request() not implemented")
     }
+    
+    func execute(request: URLRequest) async throws {
+        fatalError("request() not implemented")
+    }
 }

@@ -23,23 +23,33 @@ protocol EventService {
     
     func listEvents() async throws -> [Event]
     
-    func deleteEvent(_ event: Event) async throws
+    func deleteEvent(_ eventId: UUID) async throws
 }
 
 // MARK: - Live event service
 
-final class AnchorageEventService: EventService, NetworkManagerInjectable {
+final class LiveEventService: EventService, AccountServiceInjectable, NetworkManagerInjectable {
     
     func createEvent(_ event: Event) async throws -> Event {
-        fatalError()
+        
+        let request = URLRequestBuilder("http:localhost:8888/api/v1/events")
+            .set(method: .post)
+            .set(body: event)
+            .build()
+        
+        return try await networkManager.execute(request: request)
     }
     
     func listEvents() async throws -> [Event] {
-        fatalError()
+        let request = URLRequestBuilder("http://localhost:8888/api/v1/events").build()
+        return try await networkManager.execute(request: request)
     }
     
-    func deleteEvent(_ event: Event) async throws {
-        fatalError()
+    func deleteEvent(_ eventId: UUID) async throws {
+        let request = URLRequestBuilder("http://localhost:8888/api/v1/events/\(eventId)")
+            .set(method: .delete)
+            .build()
+        try await networkManager.execute(request: request)
     }
 }
 
@@ -55,7 +65,7 @@ final class MockedEventService: EventService {
         fatalError()
     }
     
-    func deleteEvent(_ event: Event) async throws {
+    func deleteEvent(_ eventId: UUID) async throws {
         fatalError()
     }
 }

@@ -8,4 +8,8 @@
 import Foundation
 
 struct Account: Codable {
+    
+    var id: UUID
+    
+    var email: String
 }

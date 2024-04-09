@@ -9,17 +9,22 @@ import Foundation
 
 final class URLRequestBuilder {
     
-    let method: HTTPMethod
     let url: URL
+    var method: HTTPMethod = .get
     var headers: [String: String] = [:]
     var body: Data?
     
-    init(url: String, method: HTTPMethod, useDefaultHeaders: Bool = true) {
-        self.method = method
+    init(_ url: String, useDefaultHeaders: Bool = true) {
         self.url = URL(string: url)!
         if useDefaultHeaders {
             headers = defaultHeaders()
         }
+    }
+    
+    @discardableResult
+    func set(method: HTTPMethod) -> Self {
+        self.method = method
+        return self
     }
     
     @discardableResult

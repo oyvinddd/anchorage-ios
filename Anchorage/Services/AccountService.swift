@@ -32,6 +32,10 @@ final class LiveAccountService: AccountService {
     
     var account: Account?
     
+    init() {
+        
+    }
+    
     func deleteAccount() async throws {
         fatalError()
     }

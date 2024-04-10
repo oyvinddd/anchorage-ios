@@ -10,9 +10,9 @@ import Security
 
 struct KeychainWrapper {
     
-    private let appName = "anchorage"
+    private static let appName = "anchorage"
     
-    func store<T: Codable>(_ object: T, for key: String) throws -> Bool {
+    static func store<T: Codable>(_ object: T, for key: String) throws -> Bool {
         
         let data = try JSONEncoder().encode(object)
         let query: [String: Any] = [
@@ -26,7 +26,7 @@ struct KeychainWrapper {
         return status == errSecSuccess
     }
     
-    func load<T: Codable>(key: String) throws -> T? {
+    static func load<T: Codable>(key: String) throws -> T? {
         
         let query: [String: Any] = [
             kSecClass as String: kSecClassIdentity,

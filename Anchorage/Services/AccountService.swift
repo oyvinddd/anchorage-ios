@@ -26,18 +26,20 @@ protocol AccountService {
 
 // MARK: - Live account service
 
-final class LiveAccountService: AccountService {
+final class LiveAccountService: AccountService, NetworkManagerInjectable {
     
     static let shared = LiveAccountService()
     
     var account: Account?
     
     init() {
-        
+        // try loading account object from local keychain
+        account = try? KeychainWrapper.load(key: "account")
     }
     
     func deleteAccount() async throws {
-        fatalError()
+        let request = URLRequestBuilder("http://localhost:8888/api/v1/account").build()
+        return try await networkManager.execute(request: request)
     }
 }
 
@@ -50,6 +52,6 @@ final class MockedAccountService: AccountService {
     var account: Account?
     
     func deleteAccount() async throws {
-        fatalError()
+        account = nil
     }
 }

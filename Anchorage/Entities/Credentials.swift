@@ -7,19 +7,7 @@
 
 import Foundation
 
-protocol CredentialsInjectable {
-    
-    var credentials: Credentials? { get }
-}
-
-extension CredentialsInjectable {
-    
-    var credentials: Credentials? { return Credentials.current }
-}
-
 struct Credentials: Codable {
-    
-    static var current: Credentials? = try? KeychainWrapper.load(key: "credentials")
     
     var id: UUID
     

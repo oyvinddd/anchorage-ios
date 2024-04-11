@@ -31,25 +31,21 @@ protocol EventService {
 final class LiveEventService: EventService, AccountServiceInjectable, NetworkManagerInjectable {
     
     func createEvent(_ event: Event) async throws -> Event {
-        
-        let request = URLRequestBuilder("http:localhost:8888/api/v1/events")
-            .set(method: .post)
-            .set(body: event)
-            .build()
-        
-        return try await networkManager.execute(request: request)
+        let url = try URLBuilder("events").build()
+        let req = URLRequestBuilder(.post, url: url).set(body: event).build()
+        return try await networkManager.execute(request: req)
     }
     
     func listEvents() async throws -> [Event] {
-        let request = URLRequestBuilder("http://localhost:8888/api/v1/events").build()
-        return try await networkManager.execute(request: request)
+        let url = try URLBuilder("events").build()
+        let req = URLRequestBuilder(.get, url: url).build()
+        return try await networkManager.execute(request: req)
     }
     
     func deleteEvent(_ eventId: UUID) async throws {
-        let request = URLRequestBuilder("http://localhost:8888/api/v1/events/\(eventId)")
-            .set(method: .delete)
-            .build()
-        try await networkManager.execute(request: request)
+        let url = try URLBuilder("events").append(path: eventId.uuidString).build()
+        let req = URLRequestBuilder(.delete, url: url).build()
+        try await networkManager.execute(request: req)
     }
 }
 

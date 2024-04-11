@@ -9,22 +9,17 @@ import Foundation
 
 final class URLRequestBuilder {
     
+    let method: HTTPMethod
     let url: URL
-    var method: HTTPMethod = .get
     var headers: [String: String] = [:]
     var body: Data?
     
-    init(_ url: String, useDefaultHeaders: Bool = true) {
-        self.url = URL(string: url)!
+    init(_ method: HTTPMethod, url: URL, useDefaultHeaders: Bool = true) {
+        self.method = method
+        self.url = url
         if useDefaultHeaders {
             headers = defaultHeaders()
         }
-    }
-    
-    @discardableResult
-    func set(method: HTTPMethod) -> Self {
-        self.method = method
-        return self
     }
     
     @discardableResult
@@ -39,6 +34,14 @@ final class URLRequestBuilder {
         return self
     }
     
+    @discardableResult
+    func set(bearerToken: String?) -> Self {
+        if let token = bearerToken {
+            headers["Authorization"] = "Bearer \(token)"
+        }
+        return self
+    }
+    
     func build() -> URLRequest {
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
@@ -47,7 +50,7 @@ final class URLRequestBuilder {
         for (key, value) in headers {
             request.addValue(value, forHTTPHeaderField: key)
         }
-            
+        
         // add our data to http body of the request
         request.httpBody = body
         
@@ -55,6 +58,10 @@ final class URLRequestBuilder {
     }
     
     private func defaultHeaders() -> [String: String] {
-        return ["Content-Type": "application/json"]
+        return [
+            "X-App-Version": "app_version_here",
+            "X-Device-Type": "device_version_here"
+            // "Content-Type": "application/json"
+        ]
     }
 }

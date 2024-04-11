@@ -19,26 +19,17 @@ extension AccountServiceInjectable {
 
 protocol AccountService {
     
-    var account: Account? { get }
-    
     func deleteAccount() async throws
 }
 
 // MARK: - Live account service
 
-final class LiveAccountService: AccountService, NetworkManagerInjectable {
+final class LiveAccountService: AccountService, RequestFactoryInjectable, NetworkManagerInjectable {
     
     static let shared = LiveAccountService()
     
-    var account: Account?
-    
-    init() {
-        // try loading account object from local keychain
-        account = try? KeychainWrapper.load(key: "account")
-    }
-    
     func deleteAccount() async throws {
-        let request = URLRequestBuilder("http://localhost:8888/api/v1/account").build()
+        let request = requestFactory.deleteAccountRequest()
         return try await networkManager.execute(request: request)
     }
 }
@@ -47,11 +38,9 @@ final class LiveAccountService: AccountService, NetworkManagerInjectable {
 
 final class MockedAccountService: AccountService {
     
-    static let shared = LiveAccountService()
-    
-    var account: Account?
+    static let shared = MockedAccountService()
     
     func deleteAccount() async throws {
-        account = nil
+        fatalError()
     }
 }

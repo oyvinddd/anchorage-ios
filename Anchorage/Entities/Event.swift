@@ -8,4 +8,10 @@
 import Foundation
 
 struct Event: Codable {
+    
+    var id: UUID
+    
+    var title: String
+    
+    var description: String
 }

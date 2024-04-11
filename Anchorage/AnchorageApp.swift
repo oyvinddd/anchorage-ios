@@ -11,14 +11,8 @@ import SwiftUI
 struct AnchorageApp: App {
     var body: some Scene {
         WindowGroup {
-            ZStack {
-                Text("Hello, world!")
-                    .frame(maxWidth: .infinity)
-                    .padding(.horizontal, 32)
-                    .foregroundStyle(Color.black)
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color.white)
+            SignInView()
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
     }
 }

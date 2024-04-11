@@ -12,4 +12,8 @@ enum NetworkError: Error, LocalizedError {
     case missingBaseUrl
     
     case badApiUrl
+    
+    case invalidResponse
+    
+    case decodingFailed
 }

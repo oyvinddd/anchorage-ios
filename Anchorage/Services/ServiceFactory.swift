@@ -9,6 +9,7 @@ import Foundation
 
 protocol ServiceFactoryProtocol {
     
+    var authenticationService: AuthenticationService { get }
     var accountService: AccountService { get }
     var eventService: EventService { get }
     var credentialService: CredentialService { get }
@@ -19,7 +20,8 @@ protocol ServiceFactoryProtocol {
 final class ServiceFactory: ServiceFactoryProtocol {
     
     static let instance = ServiceFactory()
-    
+        
+    var authenticationService: AuthenticationService { return LiveAuthenticationService() }
     var accountService: AccountService { return LiveAccountService() }
     var eventService: EventService { return LiveEventService() }
     var credentialService: CredentialService { return LiveCredentialService.shared }
@@ -31,6 +33,7 @@ final class MockedServiceFactory: ServiceFactoryProtocol {
     
     static let instance = ServiceFactory()
     
+    var authenticationService: AuthenticationService { return MockedAuthenticationService() }
     var accountService: AccountService { return MockedAccountService() }
     var eventService: EventService { return MockedEventService() }
     var credentialService: CredentialService { return MockedCredentialService.shared }

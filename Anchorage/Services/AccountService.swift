@@ -26,8 +26,6 @@ protocol AccountService {
 
 final class LiveAccountService: AccountService, RequestFactoryInjectable, NetworkManagerInjectable {
     
-    static let shared = LiveAccountService()
-    
     func deleteAccount() async throws {
         let request = requestFactory.deleteAccountRequest()
         return try await networkManager.execute(request: request)
@@ -37,8 +35,6 @@ final class LiveAccountService: AccountService, RequestFactoryInjectable, Networ
 // MARK: - Mocked account service
 
 final class MockedAccountService: AccountService {
-    
-    static let shared = MockedAccountService()
     
     func deleteAccount() async throws {
         fatalError()

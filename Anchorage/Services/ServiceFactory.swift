@@ -20,9 +20,9 @@ final class ServiceFactory: ServiceFactoryProtocol {
     
     static let instance = ServiceFactory()
     
-    var accountService: AccountService { return LiveAccountService.shared }
+    var accountService: AccountService { return LiveAccountService() }
     var eventService: EventService { return LiveEventService() }
-    var credentialService: CredentialService { return LiveCredentialService() }
+    var credentialService: CredentialService { return LiveCredentialService.shared }
 }
 
 // MARK: - Mocked service factory
@@ -31,7 +31,7 @@ final class MockedServiceFactory: ServiceFactoryProtocol {
     
     static let instance = ServiceFactory()
     
-    var accountService: AccountService { return MockedAccountService.shared }
+    var accountService: AccountService { return MockedAccountService() }
     var eventService: EventService { return MockedEventService() }
-    var credentialService: CredentialService { return MockedCredentialService() }
+    var credentialService: CredentialService { return MockedCredentialService.shared }
 }

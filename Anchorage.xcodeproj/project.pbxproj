@@ -20,7 +20,6 @@
 		8ECEE8BA2BC5E24200AF7A79 /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECEE8B92BC5E24200AF7A79 /* ServiceFactory.swift */; };
 		8ECEE8BC2BC5E49D00AF7A79 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECEE8BB2BC5E49D00AF7A79 /* AccountService.swift */; };
 		8ED85E522BC66D8F00130D12 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED85E512BC66D8F00130D12 /* KeychainWrapper.swift */; };
-		8ED85E552BC6874000130D12 /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED85E542BC6874000130D12 /* URLBuilder.swift */; };
 		8ED85E572BC68E3E00130D12 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED85E562BC68E3E00130D12 /* NetworkError.swift */; };
 		8ED85E592BC6900B00130D12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED85E582BC6900B00130D12 /* AppDelegate.swift */; };
 		8ED85E5C2BC6916000130D12 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED85E5B2BC6916000130D12 /* AppSettings.swift */; };
@@ -42,7 +41,6 @@
 		8ECEE8B92BC5E24200AF7A79 /* ServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
 		8ECEE8BB2BC5E49D00AF7A79 /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
 		8ED85E512BC66D8F00130D12 /* KeychainWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
-		8ED85E542BC6874000130D12 /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
 		8ED85E562BC68E3E00130D12 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		8ED85E582BC6900B00130D12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8ED85E5B2BC6916000130D12 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
@@ -108,7 +106,6 @@
 			children = (
 				8ECEE8AB2BC5D80000AF7A79 /* NetworkManager.swift */,
 				8ECEE8B42BC5DA6800AF7A79 /* URLRequestBuilder.swift */,
-				8ED85E542BC6874000130D12 /* URLBuilder.swift */,
 				8ED85E562BC68E3E00130D12 /* NetworkError.swift */,
 				8ED85E5E2BC70C7C00130D12 /* RequestFactory.swift */,
 			);
@@ -235,7 +232,6 @@
 				8ED85E572BC68E3E00130D12 /* NetworkError.swift in Sources */,
 				8ECEE8AC2BC5D80000AF7A79 /* NetworkManager.swift in Sources */,
 				8ECEE8B12BC5D8CD00AF7A79 /* Ticket.swift in Sources */,
-				8ED85E552BC6874000130D12 /* URLBuilder.swift in Sources */,
 				8ECEE8982BC5D48D00AF7A79 /* AnchorageApp.swift in Sources */,
 				8ECEE8B52BC5DA6800AF7A79 /* URLRequestBuilder.swift in Sources */,
 				8ED85E5C2BC6916000130D12 /* AppSettings.swift in Sources */,

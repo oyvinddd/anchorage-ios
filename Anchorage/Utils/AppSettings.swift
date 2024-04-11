@@ -9,12 +9,12 @@ import Foundation
 
 struct AppSettings {
     
-    private enum SettingKey: String {
+    private struct Keys {
         
-        case apiBaseUrl
+        static let apiBaseUrl = "ApiBaseUrl"
     }
     
     private static var infoDictionary: [String: Any] = Bundle.main.infoDictionary ?? [:]
     
-    static var apiBaseUrl: String { (infoDictionary[SettingKey.apiBaseUrl.rawValue] as? String) ?? "" }
+    static var apiBaseUrl: String { (infoDictionary[Keys.apiBaseUrl] as? String) ?? "" }
 }

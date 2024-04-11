@@ -14,12 +14,26 @@ protocol AuthenticationServiceInjectable {
 
 extension AuthenticationServiceInjectable {
     
+    var authenticationService: AuthenticationService { ServiceFactory.instance.authenticationService }
 }
 
 protocol AuthenticationService {
     
+    var googleAuthUrl: URL { get }
+    
+    var appleAuthUrl: URL { get }
 }
 
-final class LiveAuthenticationService: AuthenticationService {}
+final class LiveAuthenticationService: AuthenticationService, RequestFactoryInjectable {
+    
+    var googleAuthUrl: URL { requestFactory.googleAuthUrl }
+    
+    var appleAuthUrl: URL { requestFactory.appleAuthUrl }
+}
 
-final class MockedAuthenticationService: AuthenticationService {}
+final class MockedAuthenticationService: AuthenticationService, RequestFactoryInjectable {
+    
+    var googleAuthUrl: URL { requestFactory.googleAuthUrl }
+    
+    var appleAuthUrl: URL { requestFactory.appleAuthUrl }
+}

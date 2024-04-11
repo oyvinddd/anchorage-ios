@@ -19,11 +19,15 @@ extension RequestFactoryInjectable {
 
 final class RequestFactory: CredentialServiceInjectable {
     
-    private var apiBaseUrl: URL!
+    var apiBaseUrl: URL!
     
-    private var eventsUrl: URL { apiBaseUrl.appendingPathComponent("events") }
+    var eventsUrl: URL { apiBaseUrl.appendingPathComponent("events") }
     
-    private var accountUrl: URL { apiBaseUrl.appendingPathComponent("account") }
+    var accountUrl: URL { apiBaseUrl.appendingPathComponent("account") }
+    
+    var googleAuthUrl: URL { apiBaseUrl.appendingPathComponent("auth").appendingPathComponent("google") }
+    
+    var appleAuthUrl: URL { apiBaseUrl.appendingPathComponent("auth").appendingPathComponent("apple") }
     
     init(apiBaseUrl: String, addApiAndVersionPath: Bool = true) {
         self.apiBaseUrl = URL(string: apiBaseUrl)!

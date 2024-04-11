@@ -7,7 +7,18 @@
 
 import SwiftUI
 
-@MainActor final class SignInViewModel: ObservableObject {
+enum SignInProvider {
+    case google, apple
+}
+
+final class SignInViewModel: ObservableObject, AuthenticationServiceInjectable {
     
-    
+    func urlForProvider(_ provider: SignInProvider) -> URL {
+        switch provider {
+        case .google:
+            return authenticationService.googleAuthUrl
+        case .apple:
+            return authenticationService.appleAuthUrl
+        }
+    }
 }

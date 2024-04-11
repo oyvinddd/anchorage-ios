@@ -11,7 +11,6 @@
 		8ECEE8982BC5D48D00AF7A79 /* AnchorageApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECEE8972BC5D48D00AF7A79 /* AnchorageApp.swift */; };
 		8ECEE89C2BC5D48E00AF7A79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8ECEE89B2BC5D48E00AF7A79 /* Assets.xcassets */; };
 		8ECEE89F2BC5D48E00AF7A79 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8ECEE89E2BC5D48E00AF7A79 /* Preview Assets.xcassets */; };
-		8ECEE8AA2BC5D77800AF7A79 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECEE8A92BC5D77800AF7A79 /* HTTPMethod.swift */; };
 		8ECEE8AC2BC5D80000AF7A79 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECEE8AB2BC5D80000AF7A79 /* NetworkManager.swift */; };
 		8ECEE8AF2BC5D8B900AF7A79 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECEE8AE2BC5D8B900AF7A79 /* Event.swift */; };
 		8ECEE8B12BC5D8CD00AF7A79 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECEE8B02BC5D8CD00AF7A79 /* Ticket.swift */; };
@@ -34,7 +33,6 @@
 		8ECEE8972BC5D48D00AF7A79 /* AnchorageApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorageApp.swift; sourceTree = "<group>"; };
 		8ECEE89B2BC5D48E00AF7A79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8ECEE89E2BC5D48E00AF7A79 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		8ECEE8A92BC5D77800AF7A79 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		8ECEE8AB2BC5D80000AF7A79 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		8ECEE8AE2BC5D8B900AF7A79 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		8ECEE8B02BC5D8CD00AF7A79 /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
@@ -108,7 +106,6 @@
 		8ECEE8A82BC5D71F00AF7A79 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				8ECEE8A92BC5D77800AF7A79 /* HTTPMethod.swift */,
 				8ECEE8AB2BC5D80000AF7A79 /* NetworkManager.swift */,
 				8ECEE8B42BC5DA6800AF7A79 /* URLRequestBuilder.swift */,
 				8ED85E542BC6874000130D12 /* URLBuilder.swift */,
@@ -239,7 +236,6 @@
 				8ECEE8AC2BC5D80000AF7A79 /* NetworkManager.swift in Sources */,
 				8ECEE8B12BC5D8CD00AF7A79 /* Ticket.swift in Sources */,
 				8ED85E552BC6874000130D12 /* URLBuilder.swift in Sources */,
-				8ECEE8AA2BC5D77800AF7A79 /* HTTPMethod.swift in Sources */,
 				8ECEE8982BC5D48D00AF7A79 /* AnchorageApp.swift in Sources */,
 				8ECEE8B52BC5DA6800AF7A79 /* URLRequestBuilder.swift in Sources */,
 				8ED85E5C2BC6916000130D12 /* AppSettings.swift in Sources */,

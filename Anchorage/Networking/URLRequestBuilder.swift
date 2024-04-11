@@ -7,6 +7,10 @@
 
 import Foundation
 
+enum HTTPMethod: String {
+    case get, post, put, patch, head, delete
+}
+
 final class URLRequestBuilder {
     
     let method: HTTPMethod

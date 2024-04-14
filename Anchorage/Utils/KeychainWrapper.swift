@@ -44,4 +44,17 @@ struct KeychainWrapper {
         
         return try JSONDecoder().decode(T.self, from: data)
     }
+    
+    static func delete(key: String) -> Bool {
+        
+        let query: [String: Any] = [
+            kSecClass as String: kSecClassIdentity,
+            kSecAttrService as String: key,
+            kSecAttrAccount as String: appName,
+            kSecReturnData as String: false
+        ]
+        
+        let status = SecItemDelete(query as CFDictionary)
+        return status == errSecSuccess
+    }
 }

@@ -19,7 +19,7 @@
 		8ECEE8AF2BC5D8B900AF7A79 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECEE8AE2BC5D8B900AF7A79 /* Event.swift */; };
 		8ECEE8B12BC5D8CD00AF7A79 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECEE8B02BC5D8CD00AF7A79 /* Ticket.swift */; };
 		8ECEE8B32BC5D8E100AF7A79 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECEE8B22BC5D8E100AF7A79 /* Credentials.swift */; };
-		8ECEE8B52BC5DA6800AF7A79 /* URLRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECEE8B42BC5DA6800AF7A79 /* URLRequestBuilder.swift */; };
+		8ECEE8B52BC5DA6800AF7A79 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECEE8B42BC5DA6800AF7A79 /* RequestBuilder.swift */; };
 		8ECEE8B82BC5E15500AF7A79 /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECEE8B72BC5E15500AF7A79 /* EventService.swift */; };
 		8ECEE8BA2BC5E24200AF7A79 /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECEE8B92BC5E24200AF7A79 /* ServiceFactory.swift */; };
 		8ECEE8BC2BC5E49D00AF7A79 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECEE8BB2BC5E49D00AF7A79 /* AccountService.swift */; };
@@ -44,7 +44,7 @@
 		8ECEE8AE2BC5D8B900AF7A79 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		8ECEE8B02BC5D8CD00AF7A79 /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
 		8ECEE8B22BC5D8E100AF7A79 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
-		8ECEE8B42BC5DA6800AF7A79 /* URLRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestBuilder.swift; sourceTree = "<group>"; };
+		8ECEE8B42BC5DA6800AF7A79 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
 		8ECEE8B72BC5E15500AF7A79 /* EventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventService.swift; sourceTree = "<group>"; };
 		8ECEE8B92BC5E24200AF7A79 /* ServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
 		8ECEE8BB2BC5E49D00AF7A79 /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
@@ -130,7 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				8ECEE8AB2BC5D80000AF7A79 /* NetworkManager.swift */,
-				8ECEE8B42BC5DA6800AF7A79 /* URLRequestBuilder.swift */,
+				8ECEE8B42BC5DA6800AF7A79 /* RequestBuilder.swift */,
 				8ED85E562BC68E3E00130D12 /* NetworkError.swift */,
 				8ED85E5E2BC70C7C00130D12 /* RequestFactory.swift */,
 			);
@@ -263,7 +263,7 @@
 				8EC940202BC866F1001BFB7E /* SignInView.swift in Sources */,
 				8ECEE8B12BC5D8CD00AF7A79 /* Ticket.swift in Sources */,
 				8ECEE8982BC5D48D00AF7A79 /* AnchorageApp.swift in Sources */,
-				8ECEE8B52BC5DA6800AF7A79 /* URLRequestBuilder.swift in Sources */,
+				8ECEE8B52BC5DA6800AF7A79 /* RequestBuilder.swift in Sources */,
 				8ED85E5C2BC6916000130D12 /* AppSettings.swift in Sources */,
 				8ECEE8B82BC5E15500AF7A79 /* EventService.swift in Sources */,
 				8ECEE8BC2BC5E49D00AF7A79 /* AccountService.swift in Sources */,

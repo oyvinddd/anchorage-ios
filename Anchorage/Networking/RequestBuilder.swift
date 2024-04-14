@@ -11,7 +11,7 @@ enum HTTPMethod: String {
     case get, post, put, patch, head, delete
 }
 
-final class URLRequestBuilder {
+final class RequestBuilder {
     
     let method: HTTPMethod
     let url: URL

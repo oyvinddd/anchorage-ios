@@ -36,7 +36,7 @@ final class RequestFactory: CredentialServiceInjectable {
     // MARK: - Account requests
     
     func deleteAccountRequest() -> URLRequest {
-        return URLRequestBuilder(.delete, url: accountUrl)
+        return RequestBuilder(.delete, url: accountUrl)
             .set(bearerToken: credentialService?.accessToken)
             .build()
     }
@@ -44,7 +44,7 @@ final class RequestFactory: CredentialServiceInjectable {
     // MARK: - Event requests
     
     func createEventRequest(event: Event) -> URLRequest {
-        return URLRequestBuilder(.post, url: eventsUrl)
+        return RequestBuilder(.post, url: eventsUrl)
             .set(value: "Content-Type", for: "application/json")
             .set(bearerToken: credentialService?.accessToken)
             .set(body: event)
@@ -52,14 +52,14 @@ final class RequestFactory: CredentialServiceInjectable {
     }
     
     func listEventsRequest() -> URLRequest {
-        return URLRequestBuilder(.get, url: eventsUrl)
+        return RequestBuilder(.get, url: eventsUrl)
             .set(bearerToken: credentialService?.accessToken)
             .build()
     }
     
     func deleteEventRequest(eventId: UUID) -> URLRequest {
         let eventUrl = eventsUrl.appendingPathComponent(eventId.uuidString)
-        return URLRequestBuilder(.delete, url: eventUrl)
+        return RequestBuilder(.delete, url: eventUrl)
             .set(bearerToken: credentialService?.accessToken)
             .build()
     }

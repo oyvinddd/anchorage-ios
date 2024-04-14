@@ -30,7 +30,7 @@ final class RequestFactory: CredentialServiceInjectable {
     var appleAuthUrl: URL { apiBaseUrl.appendingPathComponent("auth").appendingPathComponent("apple") }
     
     init(apiBaseUrl: String, addApiAndVersionPath: Bool = true) {
-        self.apiBaseUrl = URL(string: apiBaseUrl)!
+        self.apiBaseUrl = URL(string: apiBaseUrl + (addApiAndVersionPath ? "/api/v1" : ""))!
     }
     
     // MARK: - Account requests

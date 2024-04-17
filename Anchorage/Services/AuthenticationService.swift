@@ -33,7 +33,6 @@ final class LiveAuthenticationService: AuthenticationService, RequestFactoryInje
     var appleAuthUrl: URL { requestFactory.appleAuthUrl }
     
     func handleAuthenticationRedirect(url: URL) -> Bool {
-        print("AUTH REDIRECT")
         return true
     }
 }
@@ -45,7 +44,6 @@ final class MockedAuthenticationService: AuthenticationService, RequestFactoryIn
     var appleAuthUrl: URL { requestFactory.appleAuthUrl }
     
     func handleAuthenticationRedirect(url: URL) -> Bool {
-        print("AUTH REDIRECT")
         return true
     }
 }

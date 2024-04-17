@@ -63,8 +63,8 @@ final class RequestBuilder {
     
     private func defaultHeaders() -> [String: String] {
         return [
-            "X-App-Version": "app_version_here",
-            "X-Device-Type": "device_version_here"
+            "X-App-Version": Bundle.main.appNameAndVersion,
+            "X-Device-Type": "TODO"//"\(UIDevice.current.systemName) \(UIDevice.current.systemVersion)"
             // "Content-Type": "application/json"
         ]
     }

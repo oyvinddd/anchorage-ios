@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E77FCA22BD06863008C3845 /* Bundle+Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E77FCA12BD06863008C3845 /* Bundle+Info.swift */; };
 		8EC940192BC84D04001BFB7E /* CredentialService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC940182BC84D04001BFB7E /* CredentialService.swift */; };
 		8EC9401D2BC8554A001BFB7E /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC9401C2BC8554A001BFB7E /* WebView.swift */; };
 		8EC940202BC866F1001BFB7E /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC9401F2BC866F1001BFB7E /* SignInView.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8E77FCA12BD06863008C3845 /* Bundle+Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Info.swift"; sourceTree = "<group>"; };
 		8EC940182BC84D04001BFB7E /* CredentialService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialService.swift; sourceTree = "<group>"; };
 		8EC9401C2BC8554A001BFB7E /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		8EC9401F2BC866F1001BFB7E /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 		8ECEE8C12BC5EE9600AF7A79 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				8E77FCA12BD06863008C3845 /* Bundle+Info.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 			files = (
 				8EC940192BC84D04001BFB7E /* CredentialService.swift in Sources */,
 				8EC9401D2BC8554A001BFB7E /* WebView.swift in Sources */,
+				8E77FCA22BD06863008C3845 /* Bundle+Info.swift in Sources */,
 				8ED85E5F2BC70C7C00130D12 /* RequestFactory.swift in Sources */,
 				8ECEE8BA2BC5E24200AF7A79 /* ServiceFactory.swift in Sources */,
 				8ED85E572BC68E3E00130D12 /* NetworkError.swift in Sources */,

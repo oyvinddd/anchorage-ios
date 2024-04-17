@@ -16,6 +16,14 @@
 				<string>anchorage</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>http://localhost:8888</string>
+			</array>
+		</dict>
 	</array>
 </dict>
 </plist>

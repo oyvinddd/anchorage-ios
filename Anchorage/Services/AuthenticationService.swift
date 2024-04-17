@@ -22,13 +22,19 @@ protocol AuthenticationService {
     var googleAuthUrl: URL { get }
     
     var appleAuthUrl: URL { get }
+    
+    func handleAuthenticationRedirect(url: URL) -> Bool
 }
 
 final class LiveAuthenticationService: AuthenticationService, RequestFactoryInjectable {
-    
+
     var googleAuthUrl: URL { requestFactory.googleAuthUrl }
     
     var appleAuthUrl: URL { requestFactory.appleAuthUrl }
+    
+    func handleAuthenticationRedirect(url: URL) -> Bool {
+        return true
+    }
 }
 
 final class MockedAuthenticationService: AuthenticationService, RequestFactoryInjectable {
@@ -36,4 +42,8 @@ final class MockedAuthenticationService: AuthenticationService, RequestFactoryIn
     var googleAuthUrl: URL { requestFactory.googleAuthUrl }
     
     var appleAuthUrl: URL { requestFactory.appleAuthUrl }
+    
+    func handleAuthenticationRedirect(url: URL) -> Bool {
+        return true
+    }
 }

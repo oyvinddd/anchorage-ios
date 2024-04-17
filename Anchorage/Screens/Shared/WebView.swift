@@ -14,7 +14,7 @@ struct WebView: UIViewControllerRepresentable {
     var url: URL
     
     func makeUIViewController(context: Context) -> some UIViewController {
-        return WebViewController(url: url)//SFSafariViewController(url: url)
+        return SFSafariViewController(url: url)
     }
     
     func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {

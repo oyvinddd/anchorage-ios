@@ -13,7 +13,7 @@
 			<string>no.m31.anchorage</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>anchorage://redirect</string>
+				<string>anchorage</string>
 			</array>
 		</dict>
 	</array>

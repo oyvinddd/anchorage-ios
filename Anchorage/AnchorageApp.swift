@@ -14,9 +14,8 @@ struct AnchorageApp: App {
     
     var body: some Scene {
         WindowGroup {
-            SignInView()
+            ProfileView()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .ignoresSafeArea(.all)
         }
     }
 }

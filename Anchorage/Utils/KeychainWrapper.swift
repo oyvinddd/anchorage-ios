@@ -10,15 +10,15 @@ import Security
 
 struct KeychainWrapper {
     
-    private static let appName = "anchorage"
+    private static let service = "no.m31.anchorage"
     
     static func store<T: Codable>(_ object: T, for key: String) throws -> Bool {
         
         let data = try JSONEncoder().encode(object)
         let query: [String: Any] = [
-            kSecClass as String: kSecClassIdentity,
-            kSecAttrService as String: key,
-            kSecAttrAccount as String: appName,
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrService as String: service,
+            kSecAttrAccount as String: key,
             kSecValueData as String: data
         ]
         
@@ -29,9 +29,10 @@ struct KeychainWrapper {
     static func load<T: Codable>(key: String) throws -> T? {
         
         let query: [String: Any] = [
-            kSecClass as String: kSecClassIdentity,
-            kSecAttrService as String: key,
-            kSecAttrAccount as String: appName,
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrService as String: service,
+            kSecAttrAccount as String: key,
+            kSecMatchLimit as String: kSecMatchLimitOne,
             kSecReturnData as String: true
         ]
         
@@ -48,9 +49,9 @@ struct KeychainWrapper {
     static func delete(key: String) -> Bool {
         
         let query: [String: Any] = [
-            kSecClass as String: kSecClassIdentity,
-            kSecAttrService as String: key,
-            kSecAttrAccount as String: appName,
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrService as String: service,
+            kSecAttrAccount as String: key,
             kSecReturnData as String: false
         ]
         

@@ -40,6 +40,10 @@ final class LiveTokenService: TokenService {
     
     var authenticated: Bool { tokens?.accessToken != nil }
     
+    init() {
+        
+    }
+    
     func store(tokens: TokenContainer) -> Bool {
         do {
             

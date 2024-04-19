@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Event: Codable {
+struct Event: Codable, Identifiable {
     
     var id: UUID
     

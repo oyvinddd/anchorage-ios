@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class ProfileViewModel: ObservableObject, TokenServiceInjectable {
+@MainActor final class ProfileViewModel: ObservableObject, TokenServiceInjectable {
     
     @Published var shouldSignIn: Bool = false
     

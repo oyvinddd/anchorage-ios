@@ -25,5 +25,9 @@ extension Color {
         static let background = Color(hex: 0xF3F5FA)
         
         static let primaryText = Color(hex: 0x1D2236)
+        
+        static let secondaryText = Color(hex: 0x6E717F)
+        
+        static let textField = Color(hex: 0xE6E8ED)
     }
 }

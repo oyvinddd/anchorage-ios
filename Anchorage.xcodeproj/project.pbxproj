@@ -15,6 +15,8 @@
 		8E88D2AD2BD2AE81008B8FDC /* NotificationCenter+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E88D2AC2BD2AE81008B8FDC /* NotificationCenter+Custom.swift */; };
 		8E88D2AF2BD2B1D2008B8FDC /* Color+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E88D2AE2BD2B1D2008B8FDC /* Color+App.swift */; };
 		8E88D2B22BD2B295008B8FDC /* UIColor+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E88D2B12BD2B295008B8FDC /* UIColor+App.swift */; };
+		8E88D2B52BD2B738008B8FDC /* EventListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E88D2B42BD2B738008B8FDC /* EventListView.swift */; };
+		8E88D2B72BD2B76E008B8FDC /* EventListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E88D2B62BD2B76E008B8FDC /* EventListViewModel.swift */; };
 		8EC940192BC84D04001BFB7E /* TokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC940182BC84D04001BFB7E /* TokenService.swift */; };
 		8EC940202BC866F1001BFB7E /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC9401F2BC866F1001BFB7E /* SignInView.swift */; };
 		8EC940232BC867F9001BFB7E /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC940222BC867F9001BFB7E /* SignInViewModel.swift */; };
@@ -45,6 +47,8 @@
 		8E88D2AC2BD2AE81008B8FDC /* NotificationCenter+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+Custom.swift"; sourceTree = "<group>"; };
 		8E88D2AE2BD2B1D2008B8FDC /* Color+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+App.swift"; sourceTree = "<group>"; };
 		8E88D2B12BD2B295008B8FDC /* UIColor+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+App.swift"; sourceTree = "<group>"; };
+		8E88D2B42BD2B738008B8FDC /* EventListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListView.swift; sourceTree = "<group>"; };
+		8E88D2B62BD2B76E008B8FDC /* EventListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewModel.swift; sourceTree = "<group>"; };
 		8EC940182BC84D04001BFB7E /* TokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenService.swift; sourceTree = "<group>"; };
 		8EC9401F2BC866F1001BFB7E /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		8EC940222BC867F9001BFB7E /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
@@ -101,6 +105,15 @@
 				8E88D2AE2BD2B1D2008B8FDC /* Color+App.swift */,
 			);
 			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		8E88D2B32BD2B590008B8FDC /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				8E88D2B42BD2B738008B8FDC /* EventListView.swift */,
+				8E88D2B62BD2B76E008B8FDC /* EventListViewModel.swift */,
+			);
+			path = Event;
 			sourceTree = "<group>";
 		};
 		8EC9401E2BC866DD001BFB7E /* SignIn */ = {
@@ -211,6 +224,7 @@
 		8ED85E5A2BC6904100130D12 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				8E88D2B32BD2B590008B8FDC /* Event */,
 				8E88D2A62BD26139008B8FDC /* Main */,
 				8E88D2A92BD2616A008B8FDC /* Profile */,
 				8EC9401E2BC866DD001BFB7E /* SignIn */,
@@ -294,6 +308,7 @@
 				8E88D2AD2BD2AE81008B8FDC /* NotificationCenter+Custom.swift in Sources */,
 				8ECEE8BA2BC5E24200AF7A79 /* ServiceFactory.swift in Sources */,
 				8ED85E572BC68E3E00130D12 /* NetworkError.swift in Sources */,
+				8E88D2B72BD2B76E008B8FDC /* EventListViewModel.swift in Sources */,
 				8ECEE8AC2BC5D80000AF7A79 /* NetworkManager.swift in Sources */,
 				8E88D2B22BD2B295008B8FDC /* UIColor+App.swift in Sources */,
 				8EC940202BC866F1001BFB7E /* SignInView.swift in Sources */,
@@ -309,6 +324,7 @@
 				8EC940232BC867F9001BFB7E /* SignInViewModel.swift in Sources */,
 				8EC940252BC86885001BFB7E /* AuthenticationService.swift in Sources */,
 				8ED85E592BC6900B00130D12 /* AppDelegate.swift in Sources */,
+				8E88D2B52BD2B738008B8FDC /* EventListView.swift in Sources */,
 				8E88D2AB2BD2617F008B8FDC /* ProfileViewModel.swift in Sources */,
 				8ECEE8AF2BC5D8B900AF7A79 /* Event.swift in Sources */,
 				8E88D2A82BD2614E008B8FDC /* ProfileView.swift in Sources */,

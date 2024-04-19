@@ -8,7 +8,7 @@
 import UIKit
 import AuthenticationServices
 
-final class SignInViewController: UIViewController, AuthenticationServiceInjectable {
+final class SignInViewController: UIViewController {
     
     private lazy var googleButton: UIButton = {
         let button = UIButton(frame: .zero)
@@ -17,6 +17,17 @@ final class SignInViewController: UIViewController, AuthenticationServiceInjecta
         button.setTitle("Sign in with Google", for: .normal)
         return button
     }()
+    
+    private let viewModel: SignInViewModel
+    
+    init(viewModel: SignInViewModel = SignInViewModel()) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +46,11 @@ final class SignInViewController: UIViewController, AuthenticationServiceInjecta
     }
     
     @objc private func googleButtonTapped() {
-        authenticationService.startAuthentication(from: self)
+        viewModel.startAuthentication(from: self, using: .google)
+    }
+    
+    @objc private func appleButtonTapped() {
+        viewModel.startAuthentication(from: self, using: .apple)
     }
 }
 

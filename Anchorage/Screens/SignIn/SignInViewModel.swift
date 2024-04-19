@@ -6,23 +6,11 @@
 //
 
 import SwiftUI
-
-enum SignInProvider {
-    case google, apple
-}
+import AuthenticationServices
 
 final class SignInViewModel: ObservableObject, AuthenticationServiceInjectable {
     
-    func startAuthentication() {
-        //authenticationService.startAuthentication()
-    }
-    
-    func urlForProvider(_ provider: SignInProvider) -> URL {
-        switch provider {
-        case .google:
-            return authenticationService.googleAuthUrl
-        case .apple:
-            return authenticationService.appleAuthUrl
-        }
+    func startAuthentication(from contextProvider: ASWebAuthenticationPresentationContextProviding, using provider: AuthenticationProvider) {
+        authenticationService.startAuthentication(from: contextProvider, using: provider)
     }
 }

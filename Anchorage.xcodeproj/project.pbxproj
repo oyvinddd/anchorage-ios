@@ -69,13 +69,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8EC9401A2BC854EB001BFB7E /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Shared;
-			sourceTree = "<group>";
-		};
 		8EC9401E2BC866DD001BFB7E /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,7 +175,6 @@
 			isa = PBXGroup;
 			children = (
 				8EC9401E2BC866DD001BFB7E /* SignIn */,
-				8EC9401A2BC854EB001BFB7E /* Shared */,
 			);
 			path = Screens;
 			sourceTree = "<group>";

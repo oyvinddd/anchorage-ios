@@ -8,6 +8,10 @@
 import Foundation
 import AuthenticationServices
 
+enum AuthenticationProvider {
+    case google, apple
+}
+
 protocol AuthenticationServiceInjectable {
     
     var authenticationService: AuthenticationService { get }
@@ -24,9 +28,7 @@ protocol AuthenticationService {
     
     var appleAuthUrl: URL { get }
     
-    func startAuthentication(from contextProvider: ASWebAuthenticationPresentationContextProviding)
-    
-    func handleAuthenticationRedirect(url: URL) -> Bool
+    func startAuthentication(from contextProvider: ASWebAuthenticationPresentationContextProviding, using provider: AuthenticationProvider)
 }
 
 final class LiveAuthenticationService: AuthenticationService, RequestFactoryInjectable {
@@ -35,18 +37,22 @@ final class LiveAuthenticationService: AuthenticationService, RequestFactoryInje
     
     var appleAuthUrl: URL { requestFactory.appleAuthUrl }
     
-    func startAuthentication(from contextProvider: ASWebAuthenticationPresentationContextProviding) {
-        let url = googleAuthUrl
+    func startAuthentication(from contextProvider: ASWebAuthenticationPresentationContextProviding, using provider: AuthenticationProvider) {
+        let authUrl = provider == .google ? googleAuthUrl : appleAuthUrl
         let callback = ASWebAuthenticationSession.Callback.customScheme("anchorage")
-        let session = ASWebAuthenticationSession(url: url, callback: callback) { callbackUrl, error in
-            
-        }
+        
+        let session = ASWebAuthenticationSession(url: authUrl, callback: callback, completionHandler: handleAuthenticationCallback)
         session.presentationContextProvider = contextProvider
         session.start()
     }
     
-    func handleAuthenticationRedirect(url: URL) -> Bool {
-        return true
+    private func handleAuthenticationCallback(_ callbackUrl: URL?, error: Error?) {
+        guard let url = callbackUrl, let components = URLComponents(url: url, resolvingAgainstBaseURL: true) else {
+            return
+        }
+        
+        // extract access token from the redirect url
+        let accessToken = components.queryItems?.first(where: { $0.name == "access_token" })?.value
     }
 }
 
@@ -56,11 +62,7 @@ final class MockedAuthenticationService: AuthenticationService, RequestFactoryIn
     
     var appleAuthUrl: URL { requestFactory.appleAuthUrl }
     
-    func startAuthentication(from contextProvider: any ASWebAuthenticationPresentationContextProviding) {
+    func startAuthentication(from contextProvider: ASWebAuthenticationPresentationContextProviding, using provider: AuthenticationProvider) {
         fatalError("not implemented")
-    }
-    
-    func handleAuthenticationRedirect(url: URL) -> Bool {
-        return true
     }
 }

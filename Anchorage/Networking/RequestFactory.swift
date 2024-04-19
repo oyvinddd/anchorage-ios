@@ -17,7 +17,7 @@ extension RequestFactoryInjectable {
     var requestFactory: RequestFactory { RequestFactory(apiBaseUrl: AppSettings.apiBaseUrl) }
 }
 
-final class RequestFactory: CredentialServiceInjectable {
+final class RequestFactory: TokenServiceInjectable {
     
     var apiBaseUrl: URL!
     
@@ -37,7 +37,7 @@ final class RequestFactory: CredentialServiceInjectable {
     
     func deleteAccountRequest() -> URLRequest {
         return RequestBuilder(.delete, url: accountUrl)
-            .set(bearerToken: credentialService?.accessToken)
+            .set(bearerToken: tokenService?.accessToken)
             .build()
     }
     
@@ -46,21 +46,21 @@ final class RequestFactory: CredentialServiceInjectable {
     func createEventRequest(event: Event) -> URLRequest {
         return RequestBuilder(.post, url: eventsUrl)
             .set(value: "Content-Type", for: "application/json")
-            .set(bearerToken: credentialService?.accessToken)
+            .set(bearerToken: tokenService?.accessToken)
             .set(body: event)
             .build()
     }
     
     func listEventsRequest() -> URLRequest {
         return RequestBuilder(.get, url: eventsUrl)
-            .set(bearerToken: credentialService?.accessToken)
+            .set(bearerToken: tokenService?.accessToken)
             .build()
     }
     
     func deleteEventRequest(eventId: UUID) -> URLRequest {
         let eventUrl = eventsUrl.appendingPathComponent(eventId.uuidString)
         return RequestBuilder(.delete, url: eventUrl)
-            .set(bearerToken: credentialService?.accessToken)
+            .set(bearerToken: tokenService?.accessToken)
             .build()
     }
 }

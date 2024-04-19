@@ -31,7 +31,7 @@ protocol AuthenticationService {
     func startAuthentication(from contextProvider: ASWebAuthenticationPresentationContextProviding, using provider: AuthenticationProvider)
 }
 
-final class LiveAuthenticationService: AuthenticationService, RequestFactoryInjectable {
+final class LiveAuthenticationService: AuthenticationService, TokenServiceInjectable, RequestFactoryInjectable {
 
     var googleAuthUrl: URL { requestFactory.googleAuthUrl }
     
@@ -51,8 +51,15 @@ final class LiveAuthenticationService: AuthenticationService, RequestFactoryInje
             return
         }
         
-        // extract access token from the redirect url
-        let accessToken = components.queryItems?.first(where: { $0.name == "access_token" })?.value
+        guard let queryItems = components.queryItems else {
+            return
+        }
+        
+        // extract access and refresh tokens from the redirect url
+        let accessToken = queryItems.first(where: { $0.name == "access_token" })?.value
+        let refreshToken = queryItems.first(where: { $0.name == "refresh_token" })?.value
+        
+        _ = tokenService.store(tokens: TokenContainer(accessToken, refreshToken))
     }
 }
 

@@ -12,7 +12,7 @@ protocol ServiceFactoryProtocol {
     var authenticationService: AuthenticationService { get }
     var accountService: AccountService { get }
     var eventService: EventService { get }
-    var credentialService: CredentialService { get }
+    var tokenService: TokenService { get }
 }
 
 // MARK: - Live service factory
@@ -24,7 +24,7 @@ final class ServiceFactory: ServiceFactoryProtocol {
     var authenticationService: AuthenticationService { return LiveAuthenticationService() }
     var accountService: AccountService { return LiveAccountService() }
     var eventService: EventService { return LiveEventService() }
-    var credentialService: CredentialService { return LiveCredentialService.shared }
+    var tokenService: TokenService { return LiveTokenService.shared }
 }
 
 // MARK: - Mocked service factory
@@ -36,5 +36,5 @@ final class MockedServiceFactory: ServiceFactoryProtocol {
     var authenticationService: AuthenticationService { return MockedAuthenticationService() }
     var accountService: AccountService { return MockedAccountService() }
     var eventService: EventService { return MockedEventService() }
-    var credentialService: CredentialService { return MockedCredentialService.shared }
+    var tokenService: TokenService { return MockedTokenService.shared }
 }

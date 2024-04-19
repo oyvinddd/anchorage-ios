@@ -7,8 +7,17 @@
 
 import SwiftUI
 
-struct SignInView: View {
+struct SignInView: UIViewControllerRepresentable {
     
+    func makeUIViewController(context: Context) -> some UIViewController {
+        return SignInViewController()
+    }
+    
+    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
+        // do nothing
+    }
+    
+    /*
     @StateObject var viewModel = SignInViewModel()
     @State private var presentWebView: Bool = false
     
@@ -24,7 +33,9 @@ struct SignInView: View {
             .foregroundStyle(.blue)
             
             Button("Sign in Using Google") {
-                presentWebView.toggle()
+                NotificationCenter.default.post(name: Notification.wantsGoogleAuthentication, object: nil)
+                //viewModel.startAuthentication()
+                //presentWebView.toggle()
             }
             .foregroundStyle(.yellow)
             
@@ -37,4 +48,5 @@ struct SignInView: View {
                 .ignoresSafeArea(.all)
         }
     }
+     */
 }

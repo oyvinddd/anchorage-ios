@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import AuthenticationServices
 
 protocol AuthenticationServiceInjectable {
     
@@ -23,6 +24,8 @@ protocol AuthenticationService {
     
     var appleAuthUrl: URL { get }
     
+    func startAuthentication(from contextProvider: ASWebAuthenticationPresentationContextProviding)
+    
     func handleAuthenticationRedirect(url: URL) -> Bool
 }
 
@@ -32,16 +35,30 @@ final class LiveAuthenticationService: AuthenticationService, RequestFactoryInje
     
     var appleAuthUrl: URL { requestFactory.appleAuthUrl }
     
+    func startAuthentication(from contextProvider: ASWebAuthenticationPresentationContextProviding) {
+        let url = googleAuthUrl
+        let callback = ASWebAuthenticationSession.Callback.customScheme("anchorage")
+        let session = ASWebAuthenticationSession(url: url, callback: callback) { callbackUrl, error in
+            
+        }
+        session.presentationContextProvider = contextProvider
+        session.start()
+    }
+    
     func handleAuthenticationRedirect(url: URL) -> Bool {
         return true
     }
 }
 
 final class MockedAuthenticationService: AuthenticationService, RequestFactoryInjectable {
-    
+
     var googleAuthUrl: URL { requestFactory.googleAuthUrl }
     
     var appleAuthUrl: URL { requestFactory.appleAuthUrl }
+    
+    func startAuthentication(from contextProvider: any ASWebAuthenticationPresentationContextProviding) {
+        fatalError("not implemented")
+    }
     
     func handleAuthenticationRedirect(url: URL) -> Bool {
         return true

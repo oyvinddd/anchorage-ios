@@ -7,13 +7,11 @@
 
 import UIKit
 
-final class AppDelegate: NSObject, UIApplicationDelegate, AuthenticationServiceInjectable {
+final class AppDelegate: NSObject, UIApplicationDelegate {
+
+    var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         return true
-    }
-    
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        return authenticationService.handleAuthenticationRedirect(url: url)
     }
 }

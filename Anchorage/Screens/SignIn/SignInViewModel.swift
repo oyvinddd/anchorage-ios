@@ -13,6 +13,10 @@ enum SignInProvider {
 
 final class SignInViewModel: ObservableObject, AuthenticationServiceInjectable {
     
+    func startAuthentication() {
+        //authenticationService.startAuthentication()
+    }
+    
     func urlForProvider(_ provider: SignInProvider) -> URL {
         switch provider {
         case .google:

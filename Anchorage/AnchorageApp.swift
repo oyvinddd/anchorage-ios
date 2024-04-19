@@ -10,12 +10,13 @@ import SwiftUI
 @main
 struct AnchorageApp: App {
     
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
     
     var body: some Scene {
         WindowGroup {
             SignInView()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .ignoresSafeArea(.all)
         }
     }
 }

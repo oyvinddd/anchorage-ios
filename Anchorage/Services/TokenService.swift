@@ -14,7 +14,7 @@ protocol TokenServiceInjectable {
 
 extension TokenServiceInjectable {
     
-    var tokenService: TokenService { return ServiceFactory.instance.credentialService }
+    var tokenService: TokenService { return ServiceFactory.instance.tokenService }
 }
 
 protocol TokenService {

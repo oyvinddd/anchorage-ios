@@ -37,7 +37,7 @@ final class RequestFactory: TokenServiceInjectable {
     
     func deleteAccountRequest() -> URLRequest {
         return RequestBuilder(.delete, url: accountUrl)
-            .set(bearerToken: tokenService?.accessToken)
+            .set(bearerToken: tokenService.accessToken)
             .build()
     }
     
@@ -46,21 +46,21 @@ final class RequestFactory: TokenServiceInjectable {
     func createEventRequest(event: Event) -> URLRequest {
         return RequestBuilder(.post, url: eventsUrl)
             .set(value: "Content-Type", for: "application/json")
-            .set(bearerToken: tokenService?.accessToken)
+            .set(bearerToken: tokenService.accessToken)
             .set(body: event)
             .build()
     }
     
     func listEventsRequest() -> URLRequest {
         return RequestBuilder(.get, url: eventsUrl)
-            .set(bearerToken: tokenService?.accessToken)
+            .set(bearerToken: tokenService.accessToken)
             .build()
     }
     
     func deleteEventRequest(eventId: UUID) -> URLRequest {
         let eventUrl = eventsUrl.appendingPathComponent(eventId.uuidString)
         return RequestBuilder(.delete, url: eventUrl)
-            .set(bearerToken: tokenService?.accessToken)
+            .set(bearerToken: tokenService.accessToken)
             .build()
     }
 }

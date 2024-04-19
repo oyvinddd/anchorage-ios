@@ -13,14 +13,24 @@ struct ProfileView: View {
     
     var body: some View {
         
-        VStack {
+        VStack(spacing: 16) {
+            
             Text("Secret Area!")
                 .font(Font.system(size: 32, weight: .bold))
+                .frame(maxWidth: .infinity)
+                .padding(.horizontal, 16)
+            
+            Button("Sign Out", action: signOutButtonTapped)
                 .frame(maxWidth: .infinity)
                 .padding(.horizontal, 16)
         }
         .sheet(isPresented: $viewModel.shouldSignIn, content: {
             SignInView().ignoresSafeArea(.all)
+                .interactiveDismissDisabled()
         })
+    }
+    
+    private func signOutButtonTapped() {
+        viewModel.signOut()
     }
 }

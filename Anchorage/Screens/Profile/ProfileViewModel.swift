@@ -14,4 +14,10 @@ final class ProfileViewModel: ObservableObject, TokenServiceInjectable {
     init() {
         shouldSignIn = !tokenService.authenticated
     }
+    
+    func signOut() {
+        if tokenService.clear() {
+            shouldSignIn.toggle()
+        }
+    }
 }

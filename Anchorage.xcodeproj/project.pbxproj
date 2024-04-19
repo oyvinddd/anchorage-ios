@@ -12,6 +12,7 @@
 		8E88D2A52BD25E17008B8FDC /* TokenContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E88D2A42BD25E17008B8FDC /* TokenContainer.swift */; };
 		8E88D2A82BD2614E008B8FDC /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E88D2A72BD2614E008B8FDC /* ProfileView.swift */; };
 		8E88D2AB2BD2617F008B8FDC /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E88D2AA2BD2617F008B8FDC /* ProfileViewModel.swift */; };
+		8E88D2AD2BD2AE81008B8FDC /* NotificationCenter+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E88D2AC2BD2AE81008B8FDC /* NotificationCenter+Custom.swift */; };
 		8EC940192BC84D04001BFB7E /* TokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC940182BC84D04001BFB7E /* TokenService.swift */; };
 		8EC940202BC866F1001BFB7E /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC9401F2BC866F1001BFB7E /* SignInView.swift */; };
 		8EC940232BC867F9001BFB7E /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC940222BC867F9001BFB7E /* SignInViewModel.swift */; };
@@ -39,6 +40,7 @@
 		8E88D2A42BD25E17008B8FDC /* TokenContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenContainer.swift; sourceTree = "<group>"; };
 		8E88D2A72BD2614E008B8FDC /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		8E88D2AA2BD2617F008B8FDC /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		8E88D2AC2BD2AE81008B8FDC /* NotificationCenter+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+Custom.swift"; sourceTree = "<group>"; };
 		8EC940182BC84D04001BFB7E /* TokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenService.swift; sourceTree = "<group>"; };
 		8EC9401F2BC866F1001BFB7E /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		8EC940222BC867F9001BFB7E /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
@@ -73,12 +75,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8E88D2A62BD26139008B8FDC /* Home */ = {
+		8E88D2A62BD26139008B8FDC /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				8E88D2A92BD2616A008B8FDC /* Profile */,
 			);
-			path = Home;
+			path = Main;
 			sourceTree = "<group>";
 		};
 		8E88D2A92BD2616A008B8FDC /* Profile */ = {
@@ -179,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				8E77FCA12BD06863008C3845 /* Bundle+Info.swift */,
+				8E88D2AC2BD2AE81008B8FDC /* NotificationCenter+Custom.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -195,7 +197,8 @@
 		8ED85E5A2BC6904100130D12 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				8E88D2A62BD26139008B8FDC /* Home */,
+				8E88D2A62BD26139008B8FDC /* Main */,
+				8E88D2A92BD2616A008B8FDC /* Profile */,
 				8EC9401E2BC866DD001BFB7E /* SignIn */,
 			);
 			path = Screens;
@@ -274,6 +277,7 @@
 				8EC940192BC84D04001BFB7E /* TokenService.swift in Sources */,
 				8E77FCA22BD06863008C3845 /* Bundle+Info.swift in Sources */,
 				8ED85E5F2BC70C7C00130D12 /* RequestFactory.swift in Sources */,
+				8E88D2AD2BD2AE81008B8FDC /* NotificationCenter+Custom.swift in Sources */,
 				8ECEE8BA2BC5E24200AF7A79 /* ServiceFactory.swift in Sources */,
 				8ED85E572BC68E3E00130D12 /* NetworkError.swift in Sources */,
 				8ECEE8AC2BC5D80000AF7A79 /* NetworkManager.swift in Sources */,

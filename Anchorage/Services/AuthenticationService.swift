@@ -59,7 +59,11 @@ final class LiveAuthenticationService: AuthenticationService, TokenServiceInject
         let accessToken = queryItems.first(where: { $0.name == "access_token" })?.value
         let refreshToken = queryItems.first(where: { $0.name == "refresh_token" })?.value
         
+        // we can now store the refresh and access tokens in the iOS keychain for later use
         _ = tokenService.store(tokens: TokenContainer(accessToken, refreshToken))
+        
+        // lastly, we notify the system that the user was successfully authenticated
+        NotificationCenter.default.post(name: .signInSuccess)
     }
 }
 

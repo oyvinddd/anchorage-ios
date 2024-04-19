@@ -32,6 +32,7 @@ final class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupChildViews()
+        setupObservers()
         view.backgroundColor = .red
     }
     
@@ -45,12 +46,20 @@ final class SignInViewController: UIViewController {
         ])
     }
     
+    private func setupObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(handleSignInSuccess), name: .signInSuccess, object: nil)
+    }
+    
     @objc private func googleButtonTapped() {
         viewModel.startAuthentication(from: self, using: .google)
     }
     
     @objc private func appleButtonTapped() {
         viewModel.startAuthentication(from: self, using: .apple)
+    }
+    
+    @objc private func handleSignInSuccess(_ notification: Notification) {
+        dismiss(animated: true)
     }
 }
 

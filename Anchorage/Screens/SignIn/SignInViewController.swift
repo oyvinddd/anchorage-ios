@@ -15,6 +15,7 @@ final class SignInViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(googleButtonTapped), for: .touchUpInside)
         button.setTitle("Sign in with Google", for: .normal)
+        button.setTitleColor(UIColor.App.primaryText, for: .normal)
         return button
     }()
     
@@ -33,7 +34,7 @@ final class SignInViewController: UIViewController {
         super.viewDidLoad()
         setupChildViews()
         setupObservers()
-        view.backgroundColor = .red
+        view.backgroundColor = UIColor.App.background
     }
     
     private func setupChildViews() {

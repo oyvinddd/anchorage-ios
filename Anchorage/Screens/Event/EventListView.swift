@@ -13,8 +13,16 @@ struct EventListView: View {
     
     var body: some View {
         
-        List(viewModel.events, id: \.id) { event in
-            Text(event.title)
+        NavigationStack {
+            List(viewModel.events, id: \.id) { event in
+                
+                Text(event.title)
+                    .foregroundStyle(Color.App.primaryText)
+            }
+            .navigationTitle("My Events")
+        }
+        .onAppear {
+            viewModel.listEvents()
         }
     }
 }

@@ -14,8 +14,7 @@ struct AnchorageApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ProfileView()
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
+            MainTabView()
         }
     }
 }

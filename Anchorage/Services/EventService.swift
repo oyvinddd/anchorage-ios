@@ -14,7 +14,7 @@ protocol EventServiceInjectable {
 
 extension EventServiceInjectable {
 
-    var eventService: EventService { return ServiceFactory.instance.eventService }
+    var eventService: EventService { return MockedServiceFactory.instance.eventService }
 }
 
 protocol EventService {
@@ -48,14 +48,14 @@ final class LiveEventService: EventService, RequestFactoryInjectable, NetworkMan
 
 // MARK: - Mocked event service
 
-final class MockedEventService: EventService {
+final class MockedEventService: EventService, DataFactoryInjectable {
     
     func createEvent(_ event: Event) async throws -> Event {
         fatalError()
     }
     
     func listEvents() async throws -> [Event] {
-        fatalError()
+        return dataFactory.events
     }
     
     func deleteEvent(_ eventId: UUID) async throws {

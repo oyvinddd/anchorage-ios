@@ -9,7 +9,7 @@ import UIKit
 import AVFoundation
 
 final class CameraViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
-    
+    /*
     private lazy var frameLinesView: ScannerFrameLinesView = {
         return ScannerFrameLinesView()
     }()
@@ -185,4 +185,5 @@ final class CameraViewController: UIViewController, AVCaptureMetadataOutputObjec
             fatalError("Unknown camera status")
         }
     }
+     */
 }
